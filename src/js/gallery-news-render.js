@@ -91,21 +91,36 @@ function newsCardMarkup(
   headline,
   abstract,
   pub_date,
-  section
+  categorie
 ) {
   return `
     <div class="news-gallery__item">
     <a class="news-gallery__image" href="${web_url}">
-    <div class="news-gallery__img-container"><img src="${imageURL}" 
-    alt="${keywordsMap}" loading="lazy" /><p class="news-gallery__img-container-label">${section}</p></div>
-    <button class="news-gallery__favorite-btn ><p clas="news-gallery__favorite-p"></p><svg class="news-gallery__favorite-svg" width="16" height="16"><use href="#icon-favorite"</svg></button>
-    </a>
+    <div class="news-gallery__img-container"><img src="${imageURL}"
+    alt="${keywordsMap}" loading="lazy" />
+    <span class="news-gallery__img-container-label">${categorie}</span>
+    <button type="button" class="news-gallery__favorite-btn >
+    <span clas="icon-span add-favorite">Add to favorite
+    <svg class="icon add-favorite-icon" href="#icon-favorite" width="16" height="16">
+    </svg></span>
+    <span class="icon-span remove-favorite">Remove from favorite 
+    <svg class="icon remove-favorite-icon" href="#icon-favorite" width="16" height="16">
+    </svg></span>
+    </button>
+     <p class="read">Already read
+     <svg class="click" href="#icon-check" width="17" height="12"></svg>
+     </p></div>
+
     <div class="news-gallery__info">
       <p class="news-gallery__title">${headline}</p>
       <p class="news-gallery__text">${abstract}</p>
-      <p class="news-gallery__pub_date">${pub_date}</p>
+      <div class="news-gallery__info-wrap"
+      <p class="news-gallery__pub_date">${pub_date}</p> 
+      <a class="news-gallery__read-more" href="${web_url}">Read more...</a>
     </div>
-    <a class="news-gallery__read-more" href="${web_url}">Read more...</a>
+    </div>
+   
+  
     </div>
     <div class="overlay"></div>
     </div>
