@@ -72,7 +72,7 @@ async function renderData(dataResponse) {
 
 
 async function readDataArrayToMarcup(articlesArray) {
-  return await articlesArray.map(({ abstract, headline, keywords, multimedia, pub_date, snippet, web_url }) => { 
+  return await articlesArray.map(({ abstract, headline, keywords, multimedia, pub_date, web_url, section }) => { 
     const firstImageUrl = multimedia.map((url) => { return url; });
     //console.log("firstUrl", firstImageUrl[0].url);
 
@@ -82,23 +82,34 @@ async function readDataArrayToMarcup(articlesArray) {
     //console.log(imageURL);
     const keywordsMap = keywords.map(({ value }) => { return value; }).join(', ');
     //console.log(keywordsMap);
+    
+
     return `
     <div class="news-gallery__item">
     <a class="news-gallery__image" href="${web_url}">
     <div class="news-gallery__img-container"><img src="${imageURL}" 
-    alt="${keywordsMap}" loading="lazy"/></div>
+    alt="${keywordsMap}" loading="lazy" /><p class="news-gallery__img-container-label">${section}</p></div>
+    <button class="news-gallery__favorite-btn ><p clas="news-gallery__favorite-p"></p><svg class="news-gallery__favorite-svg" width="16" height="16"><use href="#icon-favorite"</svg></button>
     </a>
-    <div class="news-gallery__info">
-      <p class="news-gallery__header">${headline.main}</p>
-      <p class="news-gallery__abstract">${abstract}</p>
-      <p class="news-gallery__pub_data">${pub_date}</p>
-      <!--p class="news-gallery__snippet">${snippet}</p-->
-    </div>
+    <div class="news-gallery__wrap-reading"><span class="news-gallery__reading">Alredy read</span> <svg class="icon" width="18" height="18">
+              <use href="#icon-check"></use>
+            </svg></div>
+            
+    <div class="news-gallery__wrap-title">
+      <p class="news-gallery__title">${headline.main}</p></div>
+      <div class="news-gallery__wrap-text">
+      <p class="news-gallery__text">${abstract}</p>
+      </div>
+      <div class="news-gallery__wrap">
+      <p class="news-gallery__pub_data">${pub_date}</p
     <a class="news-gallery__read-more" href="${web_url}">Read more...</a>
+    </div>
+    <div class="overlay"></div>
     </div>
     `; 
   }).join('');
 }
+
 
 /*
 	
