@@ -13,7 +13,11 @@ const params = {
   year: now.getFullYear(),
   weekStart: 1,
   format: "dd/mm/yyyy",
-  maxDate:now,
+  maxDate: now,
+  nextArrow: '>',
+  prevArrow: '<',
+  daysOfWeekHighlighted: [0, 6]
+
   // todayButton: true
   // defaultViewDate: now
 };

@@ -1,1 +1,89 @@
 @import 'node_modules/vanillajs-datepicker/sass/datepicker';
+.calendar__news {
+  display: flex;
+  gap: 37px;
+  width: fit-content;
+}
+
+.calendar__title {
+  margin-right: 37px;
+  margin-right: auto;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.39;
+}
+
+.calendar__input {
+  position: relative;
+  width: 168px;
+  .my__calendar__input {
+    cursor: pointer;
+    width: 100%;
+    height: 31px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #111321;
+    background-color: #ffffff;
+    border: 1px solid #111321;
+    border-radius: 20px;
+    opacity: 0.4;
+  }
+  .my__calendar__input:hover {
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #4440f6;
+  }
+  .calendar__icon--start,
+  .calendar__down {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+  }
+
+  .calendar__down {
+    right: 14px;
+  }
+
+  .calendar__icon--start {
+    left: 14px;
+  }
+}
+.calendar__input:hover {
+  .calendar__icon--start,
+  .calendar__down {
+    stroke: #ffffff;
+  }
+}
+.days-of-week {
+  opacity: 0.4;
+}
+.datepicker-cell.day {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+.datepicker-cell.day.selected,
+.datepicker-cell.day.highlighted.selected {
+  border-radius: 50%;
+  background-color: #4440f6;
+  color: #ffffff;
+  opacity: 1;
+}
+.button.next-button.next-btn,
+.button.prev-button.prev-btn {
+  width: 9px;
+  font-size: 17px;
+  color: #4440f6;
+}
+.datepicker-cell.day.highlighted {
+  background-color: unset;
+  opacity: 0.4;
+  background: transparent;
+}
