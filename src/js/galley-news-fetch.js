@@ -47,3 +47,17 @@ export async function galleryFetchCategories(currentPage) {
         console.log(e.message);
     }
 }*/
+
+
+
+
+// https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=yourkey
+export async function fetchNewsByCategory(category) {
+    try {
+        const response = await axios.get(`https://api.nytimes.com/svc/news/v3/content/all/${category}.json?api-key=${KEY}`);
+        const newsByCategory = response.data;
+        return newsByCategory.results;
+    } catch (error) {
+        console.log(error);
+    }
+}
