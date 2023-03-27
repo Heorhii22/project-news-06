@@ -1,0 +1,22 @@
+// main{
+//     flex: 1 1 auto;
+//   }
+
+footer {
+  height: 120px;
+  background-color: var(--footer-color);
+
+  @media screen and (min-width: $tablet){
+    height: 146px;
+  }
+ 
+}
+
+//   html, body{
+//       height: 100%;
+//   }
+//   .wrapper{
+//       min-height: 100%;
+//       display: flex;
+//       flex-direction: column;
+//   }

@@ -1,0 +1,212 @@
+.page-container-search {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 40px;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: left;
+  background-color: var(--bg-color);
+  
+    @media screen and (min-width: $tablet) and (max-width: $pre_desktop) {
+      height: 31px;
+      margin-bottom: 100px;
+      margin-top: 48px;
+    }
+  
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 150px;
+      margin-top: 60px;
+    }
+}
+.pagin-search {
+  display: flex;
+  justify-content: center;
+  height: 28px;
+  width: 300px;
+
+  @media screen and (min-width: $tablet) {
+    height: 31px;
+    width: 500px;
+  }
+}
+
+.page-container-search a {
+  padding: 4px 12px;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  .pg-link-dot {
+    padding: 1px 1px;
+  }
+}
+.page-container-search a.pg-link-dot {
+  padding: 0px 0px;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.pg-item-search {
+  :hover,
+  :focus {
+    color: var(--white-color);
+    background-color: var(--accent-color);
+  }
+  border: 1px solid var(--accent-color);
+  border-radius: 2px;
+}
+.page-container-search button {
+  display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+button.next-page-search,
+button.prev-page-search {
+  width: 72px;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: 1px solid var(--accent-color);
+  border-radius: 2px;
+}
+button.prev-page-search {
+  margin-right: 6px;
+}
+
+button.next-page-search {
+  margin-left: 6px;
+}
+.page-container-search button:disabled a {
+    color: var(--text-color);
+      font-family: Manrope;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 19px;
+      letter-spacing: 0em;
+      text-align: left;
+}
+
+#pagination-search {
+  display: flex;
+  align-items: center;
+  // flex-wrap: wrap;
+}
+#pagination-search li {
+  list-style: none;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0 4px;
+}
+#pagination-search li.active {
+  background-color: var(--accent-color);
+}
+#pagination-search li.active a {
+  color: var(--white-color);
+}
+#pagination-search li a {
+  text-decoration: none;
+    padding: 4px auto;
+    display: inline-block;
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    pointer-events: none;
+    color: var(--text-color);
+}
+#pagination-search li:hover {
+  background-color: var(--accent-color);
+}
+#pagination-search li:hover a {
+  color: var(--white-color);
+    background-color: var(--accent-color);
+}
+
+.settings-search {
+  padding-top: 3rem;
+  display: flex;
+  align-items: flex-start;
+}
+.settings-search .form-input {
+  margin-bottom: 1rem;
+}
+.settings-search .form-input:not(:last-child) {
+  margin-right: 3rem;
+}
+.settings-search .form-input > label {
+  margin-bottom: 10px;
+}
+.settings-search .form-input label {
+  font-family: Manrope;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: block;
+}
+.settings-search .form-input > input {
+  width: 100%;
+}
+.settings-search .form-input input {
+  font-size: 18px;
+  outline: none;
+  padding: 10px 17px;
+  border: 1px solid #b6b6b6;
+}
+.settings-search .wrapper-form-check {
+  display: flex;
+}
+.settings-search .wrapper-form-check .form-check {
+  display: flex;
+  line-height: 1;
+  align-items: center;
+}
+.settings-search .wrapper-form-check .form-check:not(:last-child) {
+  margin-right: 10px;
+}
+.settings-search .wrapper-form-check label {
+  margin-left: 10px;
+}
+@media (max-width: 992px) {
+  .settings-search {
+    flex-direction: column;
+  }
+}
+
+.s_prew-search {
+  font-family: Manrope;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+.pagination-search-hidden {
+  display: none;
+}
+a.fas {
+  height: 28px;
+}
+.pg-item-dot {
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border: 0px solid var(--accent-color);
+}

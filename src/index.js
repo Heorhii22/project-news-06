@@ -1,7 +1,13 @@
+import './js/popular_render';
+import './js/news_filter/fillter-news-buttons';
+import './js/news_filter/render-by-category';
+import './js/mobile_menu';
+import './js/weather';
+import './js/listener';
+import './js/search';
+import './js/dark_mode';
+import './js/readMore';
 import './js/calendar';
-/*import './js/weather-widget';*/
-import './js/header';
-import './js/gallery-news-render';
-import './js/categories';
-/*import './js/addtoReadpage';*/
-/*import './js/favsandstorage';*/
+import './js/pagination';
+// import './js/read_more_date';
+// import './js/pagination/pagination-category';
