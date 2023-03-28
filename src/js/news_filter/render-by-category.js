@@ -38,7 +38,8 @@ async function renderByCategory(selectedCategory) {
   //   refs.errorMarkup.classList.add('underfined-hidden');
   // }
   try {
-    const dataNewsArray = await getArticleByCategory(selectedCategory);
+    const date = "2022-25-01"
+    const dataNewsArray = await getArticleByCategory(selectedCategory, date);
     document.querySelector('.underfined').classList.add('underfined-hidden');
     dataForPag = dataNewsArray;
     const markup = getFiltredArr(dataNewsArray, windowWidth)

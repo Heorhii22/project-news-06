@@ -1,4 +1,4 @@
-const KEY = 'api-key=eQ8t8FWqeAGnKDTtIFrHmgZCflFrUTcV';
+export const KEY = 'api-key=eQ8t8FWqeAGnKDTtIFrHmgZCflFrUTcV';
 const BASE_URL = 'https://api.nytimes.com/svc';
 const MOST_POPULAR_NEWS = `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?${KEY}`;
 
@@ -56,12 +56,12 @@ async function getSearchArticle(value, page) {
 
   return docs;
 }
-async function getArticleByCategory(value) {
+async function getArticleByCategory(value, date) {
   try {
     let newValue = encodeURIComponent(value);
 
     const articleFetch = await fetch(
-      `${BASE_URL}/news/v3/content/all/${newValue}.json?${KEY}&limit=26`
+      `${BASE_URL}/news/v3/content/all/${newValue}.json?${KEY}&limit=26&pub_date:${date}`
     );
 
     const articles = await articleFetch.json();

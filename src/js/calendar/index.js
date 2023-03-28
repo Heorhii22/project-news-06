@@ -1,6 +1,32 @@
+import * as newsRender from '../api/index.js';
+
+
+const SEARCH_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?';
+const axios = require('axios').default;
+const newsDate = document.querySelector('#input-picker');
 const daysTag = document.querySelector('.days'),
   currentDate = document.querySelector('.current-date'),
   prevNextIcon = document.querySelectorAll('.calendar-icons span');
+
+newsDate.addEventListener("change", async (event) => {
+  // const searchDate = moment(event.detail.date).format("YYYY-MM-DD");
+  const searchDate = newsDate.value.replace(/\//g, '-');
+  const articl = await galleryFetch("", 0, `pub_date: ${searchDate}`)
+  console.log(articl)
+})
+export async function galleryFetch(queryLine, currentPage, fq) { 
+
+    try {
+        let response = await axios.get(`${SEARCH_URL}&fq=${fq}&${newsRender.KEY}`);
+
+        return response.data.response;
+    }
+    catch (e) { 
+        console.log(e.message);
+    }
+
+}
+
 
 // getting new date, current year and month
 let date = new Date(),
@@ -109,6 +135,7 @@ const renderCalendar = number => {
       month.padStart(2, '0') +
       '/' +
       newValueDay.padStart(2, '0');
+    document.getElementById('input-picker').dispatchEvent(new Event('change'))
 
     localStorage.setItem('VALUE', JSON.stringify(newValueDay));
 
